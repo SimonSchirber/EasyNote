@@ -1,3 +1,5 @@
+## Note App For Students looking to Monitor Progress and Get Study Recommnedations
+
 This was used for UCLA HCI 209as Project.
 
 The main capabilities of the app:
