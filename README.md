@@ -14,7 +14,7 @@ The main capabilities of the app:
 
 ##..What the App Looks Like
 
-/images/ex_1.PNG
+(/images/ex_1.PNG)
 /images/ex_2.PNG
 /images/ex_3.PNG
 /images/ex_4.PNG
