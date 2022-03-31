@@ -12,3 +12,12 @@ The main capabilities of the app:
 - parse through notes and show recommended keywords and their relative frequency while allowing the user to write their definition and save the keyword or delete/skip keyword recommendation
 - have a calender to show what your plans are, how and when you are going to study each class, progress for studying in the past, and other events
 
+##..What the App Looks Like
+
+/images/ex_1.PNG
+/images/ex_2.PNG
+/images/ex_3.PNG
+/images/ex_4.PNG
+/images/ex_5.PNG
+
+
