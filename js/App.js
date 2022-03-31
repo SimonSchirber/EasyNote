@@ -7,6 +7,7 @@ export default class App {
         this.activeNote = null;
         //add all possible functions from handlers function
         this.view = new NotesView(root, this._handlers());
+        console.log(this._handlers())
 
         this._refreshNotes();
     }
@@ -41,7 +42,8 @@ export default class App {
             onNoteAdd: () => {
                 const newNote = {
                     title: "Note Title",
-                    body: "Take note..."
+                    body: "Take note...",
+                    classname: "None"
                 };
 
                 NotesAPI.saveNote(newNote);
@@ -50,8 +52,10 @@ export default class App {
             onNoteEdit: (title, body) => {
                 NotesAPI.saveNote({
                     id: this.activeNote.id,
+                    classname: this.activeNote.classname,
                     title,
-                    body
+                    body,
+                    
                 });
 
                 this._refreshNotes();

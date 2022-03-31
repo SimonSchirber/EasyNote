@@ -6,7 +6,8 @@ export default class NotesAPI {
         //sort by date of most recently added
         return notes.sort((a,b) => {
             return new Date(a.timestamp) > new Date(b.timestamp) ? -1:1;
-        });
+        })
+        
     }
     static saveNote(noteToSave){
         //get exisitng notes, put in var notes
@@ -19,16 +20,28 @@ export default class NotesAPI {
             existing.title= noteToSave.title;
             existing.body = noteToSave.body;
             existing.timestamp =  new Date().toISOString()
+            existing.classname = noteToSave.classname
         }//new note
         else{
             //give note random id
             noteToSave.id = Math.floor(Math.random() * 1000000)
             //add timestamp
             noteToSave.timestamp = new Date().toISOString();
+            noteToSave.classname = 'General Notes'
             //if note to save is not existing id, add to "notes" var which is list of current notes
             notes.push(noteToSave)
         }
         //put all of notes in local storage JSON file
+        noteToSave.classname = localStorage.getItem("current-class")
+        localStorage.setItem("current-body", noteToSave.body)
+        localStorage.setItem("current-title", noteToSave.title)
+        localStorage.setItem("current-note-info", JSON.stringify(noteToSave));
+        console.log(`saving from Notes API ${notes}`)
+        for (var i = 0; i < notes.length; i++) {
+            if (notes[i].id == localStorage.getItem("Current-note-id")){
+               notes[i]['classname'] = localStorage.getItem("current-class")
+            }
+        }   
         localStorage.setItem("EasyNote-notes", JSON.stringify(notes)); 
     }
     static deleteNote(id){
